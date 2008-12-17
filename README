@@ -1,0 +1,30 @@
+I'm trying a little experiment: I decided to separate out the Tracks manual from the main repository, and create an HTMl version using Webby [1]. I've now put the manual in its own repository on GitHub:
+
+http://github.com/bsag/tracks_manual/
+
+Webby is a very nice, simple and lightweight static HTML generator, which can generate sites from Textile/Markdown format files and templates. I thought it would be good to separate the manual out so that (eventually) I can easily upload it directly to the Tracks site for people to view as soon as any changes are made. We should also be able to make a PDF direct from the HTML (with a stylesheet) using PrinceXML.
+
+If you want to play with the manual, you just need to install webby (and ultraviolet) from gems:
+
+sudo gem install webby ultraviolet
+
+Then cd into the tracks_manual directory and give the command:
+
+webby autobuild
+
+That will open a browser window showing the site, and it will rebuild the files each time you make a change.
+
+content/index.txt
+
+is the file to edit (Textile format), and it will build output/ index.html for you.
+
+I'm hoping that the manual will become easier to maintain and update in this format and that it will make it easier for others to contribute to.
+
+Have fun!
+
+[1] http://webby.rubyforge.org/
+
+cheers,
+
+bsag
+
