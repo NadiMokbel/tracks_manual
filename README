@@ -4,9 +4,9 @@ http://github.com/bsag/tracks_manual/
 
 Webby is a very nice, simple and lightweight static HTML generator, which can generate sites from Textile/Markdown format files and templates. I thought it would be good to separate the manual out so that (eventually) I can easily upload it directly to the Tracks site for people to view as soon as any changes are made. We should also be able to make a PDF direct from the HTML (with a stylesheet) using PrinceXML.
 
-If you want to play with the manual, you just need to install webby (and ultraviolet and bones) from gems:
+If you want to play with the manual, you just need to install webby (and a few dependencies) from gems:
 
-sudo gem install webby ultraviolet bones
+sudo gem install webby ultraviolet bones hpricot
 
 Then cd into the tracks_manual directory and give the command:
 
