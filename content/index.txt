@@ -16,7 +16,7 @@ Tracks 1.7 has been thoroughly beta tested by a large number of people, and shou
 
 There are two methods of downloading Tracks 1.7:
 
-# (Recommended for most people) Download the "zipped package":http://getontracks.org/files/tracks-current.zip, and unzip in your preferred location (e.g. @~/Sites@ for Mac OS X users).
+# (Recommended for most people) Download the "zipped package":http://bsag.bingodisk.com/public/files/tracks-current.zip, and unzip in your preferred location (e.g. @~/Sites@ for Mac OS X users).
 # If you want to live on the edge, you can get the latest development version from GitHub using git (bear in mind that this may be less stable than the released versions):
 
 <% uv( :lang => "shell-unix-generic", :line_numbers => true, :theme => "blackboard" ) do -%>
@@ -55,7 +55,7 @@ If you don't want to (or can't) use one of the all in one installations, you'll 
 # *RubyGems*. The gems needed by Rails to interact with the database have to be compiled on the platform on which they will be run, so we cannot include them with the Tracks package, unlike some other gems. So you will need to "download":http://rubyforge.org/frs/?group_id=126 and install RubyGems (run @ruby setup.rb@ after extracting the package). Note that once again, Mac OS X Leopard users get an easy life, because RubyGems and the SQLite3 gem is already installed. Once installed you can use RubyGems to install the gems you need for your database. If you are using SQLite3, run @sudo gem install sqlite3-ruby@, then select the appropriate package for your platform (version 1.2.1 recommended). You can use MySQL without installing a gem, but installing the gem can speed things up a bit: @sudo install gem mysql@. If you're using Leopard, there are a few work-arounds necessary, which are explained on "Mac OS Forge":http://trac.macosforge.org/projects/ruby/wiki/Troubleshooting#IcannotbuildrubymysqlonLeopardwithmysql.combinaries. The ruby-mysql bindings can sometimes be a bit troublesome to install, so to be honest, it's probably not worth the bother unless you are trying to wring maximum speed out of your system. If you are using PostgreSQL, then you can install a postgres gem: @gem install postgres@.
 # *Database*. The easiest option is to use SQLite3, as the database is included in the package. All you need then is the @sqlite3-ruby@ gem, as described in step 2, and the SQLite3 libraries and binary (see "sqlite.org":http://sqlite.org/download.html for downloads and installation instructions). If you want to use MySQL, download and install a package for your platform from "MySQL.com":http://dev.mysql.com/downloads/mysql/5.0.html. The basic steps for Postgresql should be similar to those for MySQL, but they will not be discussed further here.
 
-You can find several installation howtos for specific setups "here":http://dev.rousette.org.uk/wiki/Tracks/Install. They were contributed by various Tracks users.
+You can find several installation howtos for specific setups "here":http://www.getontracks.org/wiki/Installation-Index/. They were contributed by various Tracks users.
 
 h2.  Installation
 
@@ -183,7 +183,7 @@ h3.  Install Tracks 1.7
 
 There are two methods of downloading Tracks 1.7:
 
-# (Recommended for most people) Download the "zipped package":http://getontracks.org/files/tracks-current.zip, and unzip in your preferred location (e.g. @~/Sites@ for Mac OS X users).
+# (Recommended for most people) Download the "zipped package":http://bsag.bingodisk.com/public/files/tracks_1.7rc.zip, and unzip in your preferred location (e.g. @~/Sites@ for Mac OS X users).
 # If you want to live on the edge, you can get the latest development version from GitHub using git (bear in mind that this may be less stable than the released versions):
 
 <% uv( :lang => "shell-unix-generic", :line_numbers => true, :theme => "blackboard" ) do -%>
