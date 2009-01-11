@@ -35,21 +35,12 @@ filter:    erb
    </div>
 
    <div class="column span-5 append-2 last">
-      <h4>Sidebar</h4>
-
-      <div class="box">
-         <p class="last">Mauris a lectus. Aliquam erat volutpat. Phasellus ultrices mi a sapien. Nunc rutrum egestas lorem. Duis ac sem sagittis elit tincidunt gravida.</p>
-      </div>
-
-      <p class="quiet">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras ornare mattis nunc. Mauris venenatis, pede sed aliquet vehicula, lectus tellus pulvinar neque, non cursus sem nisi vel augue.</p>
-
-      <h5>Incremental leading</h5>
-      <p class="incr">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras ornare mattis nunc. Mauris venenatis, pede sed aliquet vehicula, lectus tellus pulvinar neque, non cursus sem nisi vel augue. sed aliquet vehicula, lectus tellus.</p>
+      <%= render(:partial => "sidebar") %>
    </div>
-
+   
    <div class="column span-20 prepend-2 append-2 first last" id="footer">
      <hr />
-     <p>This website was created with <a href="http://webby.rubyforge.org">Webby</a></p>
+     <p>Last updated: <%= @page.mtime.strftime("%a %d %b %Y at %H:%M") %> | Created with <a href="http://webby.rubyforge.org">Webby</a></p>
    </div>
 
 </div>

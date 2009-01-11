@@ -37,7 +37,7 @@ h3.  Easy installation options
 
 If you'd like to install Tracks on a local machine, try "BitNami":http://bitnami.org/stack/tracks -- it runs on Windows, Mac OS X and Linux.
 
-If you'd like an easy way to access Tracks from any internet-connected computer, sign up for a free account at "Morph eXchange":http://www.morphexchange.com/. Sign up for a free account, then choose 'Subscriptions' to subscribe to the Tracks service.
+If you'd like an easy way to access Tracks from any internet-connected computer, sign up for a free account at "Morph eXchange":http://www.morphexchange.com/. Sign up for a free account, then click on "See all available subscriptions" and you'll see Tracks listed as an application. Just subscribe to Tracks and you can get started. This option is recommended for those with little technical know-how.
 
 
 h3.  What is included with the Tracks package?

@@ -1,0 +1,18 @@
+---
+filter: erb
+---
+  <h4>Other resources</h4>
+
+   <div class="box">
+      <p class="last"><a href="http://bsag.bingodisk.com/public/files/manual.pdf">Download PDF version of this manual</a></p>
+   </div>
+
+   <h5>Community help</h5>
+   <p>
+     <ul>
+       <li><a href="http://www.getontracks.org/forums/">Forums</a></li>
+       <li><a href="http://www.getontracks.org/wiki/">Wiki</a></li>
+       <li><a href="http://www.getontracks.org/development/index">Get involved with development</a></li>
+       </ul>
+   </p>
+
