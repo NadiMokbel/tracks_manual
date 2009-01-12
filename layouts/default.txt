@@ -27,7 +27,7 @@ filter:    erb
 
    <div class="column span-20 prepend-2 append-2 first last" id="header">
      <p class="title">Tracks Manual</p>
-     <hr>
+     <hr />
    </div>
 
    <div class="column span-15 prepend-2 first">
