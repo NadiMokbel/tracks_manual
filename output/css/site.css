@@ -1,26 +1,25 @@
 
-body {
-  font-family: Verdana, "Bitstream Vera Sans", sans-serif;
-}
-
 /* Headings
  * --------------------------------------------------------------------- */
 h1,h2,h3,h4,h5,h6 { color: #111; }
 
+h3 { border-bottom: 1px solid #999; padding-bottom: 3px; }
+
 /* Text Elements
  * --------------------------------------------------------------------- */
-a                 { color: #125AA7; }
+a                 { color: #7f0c19; }
 a:hover           { color: #000; }
 blockquote        { color: #666; }
 
-pre {
-  background: #eee;
-  border:     1px solid #ddd;
+code { 
+  font-size: 1.1em;
+  color: #000;
+  background-color: #eee;
 }
 
 hr {
-  background: #B2CCFF;
-  color:      #B2CCFF;
+  background: #111;
+  color:      #111;
 }
 
 /* Tables
@@ -48,4 +47,17 @@ p.title {
 
 #header p.title { font-size: 3em; line-height: 1; margin-bottom: 0.5em; }
 
+div#toc ul {list-style-type: none;}
+
+a.current:before { 
+  content: "→ ";
+  color: #000;
+  }
+  
+a.current {
+  color: #000;
+  text-decoration: none;
+}
+
+#footer { text-align: center; }
 /* EOF */

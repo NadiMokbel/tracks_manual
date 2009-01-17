@@ -24,6 +24,13 @@ filter:    erb
 </head>
 <body>
 
+  <%
+    chapters = @pages.find(:all,
+                            :in_directory => "chapter",
+                            :sort_by => "filename"
+                            )
+  %>
+
 <div class="container">
 
    <div class="column span-20 prepend-2 append-2 first last" id="header">
@@ -32,6 +39,18 @@ filter:    erb
    </div>
 
    <div class="column span-15 prepend-2 first">
+     <div id="toc" class="box">
+       <ul>
+         <li><a href="../index.html">Introduction</a></li>
+         <% chapters.each do |page| %>
+            <% if page.title == @page.title %>
+              <li><a href="<%= page.url %>" class="current"><%= page.title %></a></li>
+            <% else %>
+              <li><a href="<%= page.url %>"><%= page.title %></a></li>
+            <% end %>
+         <% end %>
+       </ul>
+     </div>
       <%= @content %>
    </div>
 
@@ -41,7 +60,7 @@ filter:    erb
    
    <div id="footer" class="column span-20 prepend-2 append-2 first last">
      <hr />
-     <p>Last updated: <%= @page.mtime.strftime("%a %d %b %Y at %H:%M") %> | Created with <a href="http://webby.rubyforge.org">Webby</a></p>
+     <p>Last updated: <%= @page.mtime.strftime("%a %d %b %Y at %H:%M") %> &nbsp; | &nbsp; Created with <a href="http://webby.rubyforge.org">Webby</a></p>
    </div>
 
 </div>
