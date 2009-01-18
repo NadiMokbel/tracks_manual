@@ -45,7 +45,7 @@ p.title {
   margin-bottom: 0.75em;
 }
 
-#header p.title { font-size: 3em; line-height: 1; margin-bottom: 0.5em; }
+#header h1 img { margin-bottom: 0; }
 
 div#toc ul {list-style-type: none;}
 
@@ -63,5 +63,30 @@ a.current {
   text-align: center;
   border-top: 1px solid #666;
   padding-top: 10px;
+}
+
+#navcontainer ul {
+  padding-left: 0;
+  margin-left: 0;
+  background-color: #7f0c19;
+  color: #fff;
+  float: left;
+  width: 100%;
+}
+
+#navcontainer ul li { display: inline; }
+
+#navcontainer ul li a {
+  padding: 0.2em 1em;
+  background-color: #7f0c19;
+  color: #fff;
+  text-decoration: none;
+  float: left;
+  border-right: 1px solid #fff;
+}
+
+#navcontainer ul li a:hover {
+  background-color: #44060d;
+  color: #fff;
 }
 /* EOF */

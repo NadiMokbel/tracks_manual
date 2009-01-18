@@ -39,7 +39,7 @@ filter:    erb
       <%= @content %>
    </div>
 
-   <div id="sidebar" class="column span-7 last">
+   <div id="sidebar" class="column span-8 last">
       <%= render(:partial => "/sidebar") %>
    </div>
    
