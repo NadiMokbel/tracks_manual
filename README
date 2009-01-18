@@ -16,9 +16,13 @@ That will open a browser window showing the site, and it will rebuild the files 
 
 content/index.txt
 
-is the file to edit (Textile format), and it will build output/ index.html for you.
+is the file to edit (Textile format), and it will build output/index.html for you.
 
 I'm hoping that the manual will become easier to maintain and update in this format and that it will make it easier for others to contribute to.
+
+As of 18 Jan 2009, the contents of the output directory are deployed to http://getontracks.org/doc/ so that with any changes to the source, the manual can be easily pushed to the public site. If you have Prince XML installed, you can also make a PDF manual with the following command if you have Webby running (with webby autobuild):
+
+prince http://localhost:4331/printed/manual.html -o ~/Desktop/manual.pdf
 
 Have fun!
 
