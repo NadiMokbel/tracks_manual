@@ -1,0 +1,4 @@
+---
+filter: erb
+---
+<p>Last updated on <%= @page.mtime.strftime("%a %d %b %Y at %H:%M") %> &nbsp; :: &nbsp; Created with <a href="http://webby.rubyforge.org">Webby</a></p>

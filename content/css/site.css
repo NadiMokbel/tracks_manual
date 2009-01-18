@@ -30,7 +30,7 @@ blockquote        { color: <%= @page.color['blockquote'] %>; }
 code { 
   font-size: 1.1em;
   color: #000;
-  background-color: #eee;
+  background-color: <%= @page.color['box-bg'] %>
 }
 
 hr {
@@ -75,5 +75,9 @@ a.current {
   text-decoration: none;
 }
 
-#footer { text-align: center; }
+#footer { 
+  text-align: center;
+  border-top: 1px solid <%= @page.color['quiet'] %>;
+  padding-top: 10px;
+}
 /* EOF */

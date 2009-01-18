@@ -7,41 +7,25 @@ filter:    erb
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <title>Tracks Manual :: <%= @page.title %></title>
-   <meta name="author" content="<%= @page.author %>" />
-
-   <!--- Blueprint CSS Framework -->
-   <link rel="stylesheet" href="/css/blueprint/screen.css" type="text/css" media="screen, projection" />
-   <link rel="stylesheet" href="/css/blueprint/print.css" type="text/css" media="print" />
-
-   <!-- Ultraviolet syntax highlighting CSS -->
-   <link rel="stylesheet" href="/css/blackboard.css" type="text/css" />
-
-   <!-- Custom CSS for screen and PDF -->
-   <link rel="stylesheet" href="/css/site.css" type="text/css" media="screen, projection" />
-   <link rel="stylesheet" href="/css/printed-pdf.css" type="text/css" media="print" />
-</head>
+  <%= render(:partial => "/head") %>
 <body>
 
 <div class="container">
 
-   <div class="column span-20 prepend-2 append-2 first last" id="header">
-     <p class="title">Tracks Manual</p>
-     <hr />
+   <div class="column span-24 first last" id="header">
+     <h1><img src="/assets/tracks-logo.png" /></h1>
    </div>
 
-   <div class="column span-15 prepend-2 first">
+   <div class="column span-15 append-1 first">
       <%= @content %>
    </div>
 
-   <div id="sidebar" class="column span-5 append-2 last">
+   <div id="sidebar" class="column span-7 last">
       <%= render(:partial => "/sidebar") %>
    </div>
    
-   <div id="footer" class="column span-20 prepend-2 append-2 first last">
-     <hr />
-     <p>Last updated: <%= @page.mtime.strftime("%a %d %b %Y at %H:%M") %> | Created with <a href="http://webby.rubyforge.org">Webby</a></p>
+   <div id="footer" class="column span-24 first last">
+     <%= render(:partial => "/footer") %>
    </div>
 
 </div>
