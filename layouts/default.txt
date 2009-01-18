@@ -1,6 +1,8 @@
 ---
 extension: html
-filter:    erb
+filter:    
+  - erb
+  - basepath
 ---
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -13,7 +15,7 @@ filter:    erb
 <div class="container">
 
    <div class="column span-24 first last" id="header">
-     <h1><img src="/assets/tracks-logo.png" /></h1>
+     <h1><img src="./assets/tracks-logo.png" /></h1>
      
      <div id="navcontainer">
        <ul id="navlist">
@@ -23,7 +25,7 @@ filter:    erb
          <li><a href="http://getontracks.org/doc/index.html">Manual</a></li>
          <li><a href="http://getontracks.org/downloads/index">Downloads</a></li>
          <li><a href="http://getontracks.org/development/index">Development</a></li>
-         <li><a href="http://getontracks.org/screenshotes/index">Screenshots</a></li>
+         <li><a href="http://getontracks.org/screenshots/index">Screenshots</a></li>
        </ul>
       </div>
    </div>
