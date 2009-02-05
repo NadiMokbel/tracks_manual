@@ -9,38 +9,30 @@ filter:
 
 h2.  Upgrading Tracks
 
-h3.  Upgrading from Tracks 1.6
+h3.  Upgrading from Tracks 1.5, 1.6 or from Tracks 1.7RC1 to Tracks 1.7RC2
 
-You will need to upgrade your @config/environment.rb@ with the new content from @config/environment.rb.tmpl@ included in 1.7, as the format of this file has changed a bit between 1.6 and 1.7. Also, there were some database changes in Tracks 1.7, so you need to migrate to them.
+In Tracks 1.7RC2 the site specific configuration is moved from @environment.rb@ into the new @site.yml@. This makes updating @environment.rb@ much easier without you needing to set your site specific settings after each update.
+
+After you install Tracks 1.7RC2 there will be no @environment.rb.tmpl@ anymore. You will find an @environment.rb@ which you can leave untouched. Just fill in your settings from your old @environment.rb@ in the new @site.yml@. If you have made any other customisations to @environment.rb@ in the past, you can put them in your own configuration file (for example, in my-config.rb) in @config/initializers@. Please let us know it you think they should be in @site.yml.tmpl@
+
+Also, there were some database changes in Tracks 1.7RC2, so you need to migrate to them.
 
 # Back up your existing database and installation of Tracks
-# Install Tracks 1.7 in a new directory
-# Copy over a few configuration files from your Tracks 1.6 directory. If using SQLite3, copy the old database into the new Tracks 1.7 directory.
-# Rebuild your environment.rb from the updated environment.rb.tmpl
+# Install Tracks 1.7RC2 in a new directory
+# Copy over the configuration from your previous Tracks installation. If using SQLite3, copy the old database into the new Tracks 1.7RC2 directory.
 # Run @rake db:migrate RAILS_ENV=production@ to update your old database to the new schema -- you did back up your database didn't you?
 # Run @script/server@ inside your Tracks 1.7 directory to start up Tracks 1.7.
 # Once you are happy that everything is working well, delete your old Tracks directory.
 
-h3.  Upgrading from Tracks 1.5
-
-There are no changes to the database between 1.5 and 1.6, but you will need to upgrade your @config/environment.rb@ with the new content from @config/environment.rb.tmpl@ included in 1.6, as the format of this file has changed a great deal between 1.5 and 1.6.
-
-# Back up your existing database and installation of Tracks
-# Install Tracks 1.6 in a new directory
-# Copy over a few configuration files from your Tracks 1.043 directory. If using SQLite3, copy the old database into the new Tracks 1.6 directory
-# Rebuild your environment.rb from the updated environment.rb.tmpl
-# Run @script/server@ inside your Tracks 1.6 directory to start up Tracks 1.6.
-# Once you are happy that everything is working well, delete your old Tracks directory.
-
-h3.  Upgrading from Tracks 1.043
+h3.  Upgrading from Tracks 1.043 to 1.7
 
 This should be a relatively straightforward, and involves the following main steps:
 
 # Back up your existing database and installation of Tracks
 # Install Tracks 1.6 in a new directory
-# Copy over a few configuration files from your Tracks 1.043 directory. If using SQLite3, copy the old database into the new Tracks 1.6 directory
+# Copy over the configuration from your previous Tracks 1.043 installation. If using SQLite3, copy the old database into the new Tracks 1.7RC2 directory.
 # Run @rake db:migrate RAILS_ENV=production@ to update your old database to the new schema -- you did back up your database didn't you?
-# Run @script/server@ inside your Tracks 1.6 directory to start up Tracks 1.6.
++# Run @script/server@ inside your Tracks 1.7 directory to start up Tracks 1.7.
 # Once you are happy that everything is working well, delete your old Tracks directory.
 
 h3. Detailed steps
@@ -70,12 +62,12 @@ cd tracks
 <% end -%>
 
 
-h4.  Copy over old configuration files
+h4.  Copy over old configuration
 
-There are a few files you need to copy over from your old installation. If you copy them over rather than moving them, you can still run your old version of Tracks if anything goes awry with the installation process.
+There are a few settings and configuration files you need to copy over from your old installation. If you copy them over rather than moving them, you can still run your old version of Tracks if anything goes awry with the installation process.
 
 # Copy @/config/database.yml@ from your old Tracks directory to the same location in the new one. Double check that the information there is still correct.
-# Duplicate @/config/environment.rb.tmpl@ in the Tracks 1.7 directory, and rename the file to @environment.rb@. Open the file and alter the line @SALT = "change-me"@ so that it matches what you had in this file in your old installation. You may also want to change the time zone setting as appropriate for your location. If you have made any other customisations to @environment.rb@ in the past, copy those over, but the contents of the file have slightly changed since 1.5, so check it carefully.
+# Duplicate @/config/site.yml.tmpl@ in the Tracks 1.7 directory, and rename the file to @site.yml@. Open the file and alter the line @salt: "change-me"@ so that it matches what you had in the @environment.rb@ file in your old installation. You may also want to change the time zone setting as appropriate for your location. If you have made any other customisations to @environment.rb@ in the past, you can put them in your own configuration file (e.g. my-config.rb) in @config/initializers@. Please let us know it you think they should be in @site.yml.tmpl@.
 # Copy your @/log@ directory over from your old installation to the root of the new one, or just rename @/log.tmpl@ to @log@ to start afresh.
 # If you are using SQLite3, copy your database from @/db@ in your old Tracks directory to the same location in the new one.
 # If you are using Windows, you may need to check the 'shebang' lines (@#!/usr/bin/env ruby@) [1] of the @/public/dispatch.*@ files and all the files in the @/script@ directory. They are set to @#!/usr/bin/env ruby@ by default. Check the format of those lines in your old installation, and change the new ones as necessary.
