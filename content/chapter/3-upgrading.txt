@@ -9,17 +9,23 @@ filter:
 
 h2.  Upgrading Tracks
 
-h3.  Upgrading from Tracks 1.5, 1.6 or from Tracks 1.7RC1 to Tracks 1.7RC2
+h3.  Upgrading from Tracks 1.7RC2 to Tracks 1.7
 
-In Tracks 1.7RC2 the site specific configuration is moved from @environment.rb@ into the new @site.yml@. This makes updating @environment.rb@ much easier without you needing to set your site specific settings after each update.
+There were only a few fixes in the code, so you can consider unzipping the new release over your install of Tracks 1.7RC2. Do make a backup of your Tracks 1.7RC2 install and your database! 
 
-After you install Tracks 1.7RC2 there will be no @environment.rb.tmpl@ anymore. You will find an @environment.rb@ which you can leave untouched. Just fill in your settings from your old @environment.rb@ in the new @site.yml@. If you have made any other customisations to @environment.rb@ in the past, you can put them in your own configuration file (for example, in my-config.rb) in @config/initializers@. Please let us know it you think they should be in @site.yml.tmpl@
+It is also possible to follow the instructions below and copy your existing Site.yml from your Tracks 1.7RC2 install.
 
-Also, there were some database changes in Tracks 1.7RC2, so you need to migrate to them.
+h3.  Upgrading from Tracks 1.5, 1.6 or from Tracks 1.7RC1 to Tracks 1.7
+
+In Tracks 1.7 (since RC2) the site specific configuration is moved from @environment.rb@ into the new @site.yml@. This makes updating @environment.rb@ much easier without you needing to set your site specific settings after each update.
+
+After you install Tracks 1.7 there will be no @environment.rb.tmpl@ anymore. You will find an @environment.rb@ which you can leave untouched. Just fill in your settings from your old @environment.rb@ in the new @site.yml@. If you have made any other customisations to @environment.rb@ in the past, you can put them in your own configuration file (for example, in my-config.rb) in @config/initializers@. Please let us know it you think they should be in @site.yml.tmpl@
+
+Also, there were some database changes made in Tracks 1.7, so you need to migrate to them.
 
 # Back up your existing database and installation of Tracks
-# Install Tracks 1.7RC2 in a new directory
-# Copy over the configuration from your previous Tracks installation. If using SQLite3, copy the old database into the new Tracks 1.7RC2 directory.
+# Install Tracks 1.7 in a new directory
+# Copy over the configuration from your previous Tracks installation. If using SQLite3, copy the old database into the new Tracks 1.7 directory.
 # Run @rake db:migrate RAILS_ENV=production@ to update your old database to the new schema -- you did back up your database didn't you?
 # Run @script/server@ inside your Tracks 1.7 directory to start up Tracks 1.7.
 # Once you are happy that everything is working well, delete your old Tracks directory.
@@ -30,7 +36,7 @@ This should be a relatively straightforward, and involves the following main ste
 
 # Back up your existing database and installation of Tracks
 # Install Tracks 1.6 in a new directory
-# Copy over the configuration from your previous Tracks 1.043 installation. If using SQLite3, copy the old database into the new Tracks 1.7RC2 directory.
+# Copy over the configuration from your previous Tracks 1.043 installation. If using SQLite3, copy the old database into the new Tracks 1.7 directory.
 # Run @rake db:migrate RAILS_ENV=production@ to update your old database to the new schema -- you did back up your database didn't you?
 +# Run @script/server@ inside your Tracks 1.7 directory to start up Tracks 1.7.
 # Once you are happy that everything is working well, delete your old Tracks directory.
@@ -52,7 +58,7 @@ h4.  Install the latest version of Tracks
 
 There are two methods of downloading Tracks:
 
-# (Recommended for most people) Download the "zipped package":http://bsag.bingodisk.com/public/files/tracks_1.7rc.zip, and unzip in your preferred location (e.g. @~/Sites@ for Mac OS X users).
+# (Recommended for most people) Download the "zipped package":http://bsag.bingodisk.com/public/files/tracks_1.7.zip, and unzip in your preferred location (e.g. @~/Sites@ for Mac OS X users).
 # If you want to live on the edge, you can get the latest development version from GitHub using git (bear in mind that this may be less stable than the released versions):
 
 <% uv( :lang => "shell-unix-generic", :line_numbers => true, :theme => "blackboard" ) do -%>

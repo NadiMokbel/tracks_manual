@@ -114,8 +114,8 @@
 	<li><strong>MySQL</strong>. Once you have MySQL installed, you need to create a database and database-user to use with Tracks 1.7. For this, you can use MySQL Administrator or go into a terminal and issue the following commands:</li>
 </ol>
 <div class="UltraViolet"><pre class="blackboard"><span class="line-numbers">   1 </span> mysql -uroot -p
-<span class="line-numbers">   2 </span> mysql&gt; CREATE DATABASE tracks<span class="Constant">16</span>;
-<span class="line-numbers">   3 </span> mysql&gt; <span class="Keyword">GRANT</span> ALL PRIVILEGES <span class="Keyword">ON </span>tracks<span class="Constant">16</span>.* TO yourmysqluser@localhost \
+<span class="line-numbers">   2 </span> mysql&gt; CREATE DATABASE tracks;
+<span class="line-numbers">   3 </span> mysql&gt; <span class="Keyword">GRANT</span> ALL PRIVILEGES <span class="Keyword">ON </span>tracks.* TO yourmysqluser@localhost \
 <span class="line-numbers">   4 </span> IDENTIFIED BY <span class="String"><span class="String">'</span>password-goes-here'</span> WITH <span class="Keyword">GRANT</span> OPTION;
 </pre></div><h4>Configure variables</h4>
 <ol>
@@ -156,7 +156,7 @@
    </div>
    
    <div id="footer" class="column span-24 first last">
-     <p>Last updated on Thu 05 Feb 2009 at 20:52 &nbsp; :: &nbsp; Created with <a href="http://webby.rubyforge.org">Webby</a></p>
+     <p>Last updated on Thu 26 Feb 2009 at 20:56 &nbsp; :: &nbsp; Created with <a href="http://webby.rubyforge.org">Webby</a></p>
 
    </div>
 

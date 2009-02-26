@@ -84,8 +84,8 @@ Before you go any further, you need to decide which database you will use. See t
 
 <% uv( :lang => "sql", :line_numbers => true, :theme => "blackboard" ) do -%>
 mysql -uroot -p
-mysql> CREATE DATABASE tracks16;
-mysql> GRANT ALL PRIVILEGES ON tracks16.* TO yourmysqluser@localhost \
+mysql> CREATE DATABASE tracks;
+mysql> GRANT ALL PRIVILEGES ON tracks.* TO yourmysqluser@localhost \
 IDENTIFIED BY 'password-goes-here' WITH GRANT OPTION;
 <% end -%>
 

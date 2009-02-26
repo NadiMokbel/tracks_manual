@@ -60,14 +60,17 @@
        </ul>
      </div>
       <h2>Upgrading Tracks</h2>
-<h3>Upgrading from Tracks 1.5, 1.6 or from Tracks 1.7RC1 to Tracks 1.7RC2</h3>
-<p>In Tracks 1.7RC2 the site specific configuration is moved from <code>environment.rb</code> into the new <code>site.yml</code>. This makes updating <code>environment.rb</code> much easier without you needing to set your site specific settings after each update.</p>
-<p>After you install Tracks 1.7RC2 there will be no <code>environment.rb.tmpl</code> anymore. You will find an <code>environment.rb</code> which you can leave untouched. Just fill in your settings from your old <code>environment.rb</code> in the new <code>site.yml</code>. If you have made any other customisations to <code>environment.rb</code> in the past, you can put them in your own configuration file (for example, in my-config.rb) in <code>config/initializers</code>. Please let us know it you think they should be in <code>site.yml.tmpl</code></p>
-<p>Also, there were some database changes in Tracks 1.7RC2, so you need to migrate to them.</p>
+<h3>Upgrading from Tracks 1.7RC2 to Tracks 1.7</h3>
+<p>There were only a few fixes in the code, so you can consider unzipping the new release over your install of Tracks 1.7RC2. Do make a backup of your Tracks 1.7RC2 install and your database!</p>
+<p>It is also possible to follow the instructions below and copy your existing Site.yml from your Tracks 1.7RC2 install.</p>
+<h3>Upgrading from Tracks 1.5, 1.6 or from Tracks 1.7RC1 to Tracks 1.7</h3>
+<p>In Tracks 1.7 (since RC2) the site specific configuration is moved from <code>environment.rb</code> into the new <code>site.yml</code>. This makes updating <code>environment.rb</code> much easier without you needing to set your site specific settings after each update.</p>
+<p>After you install Tracks 1.7 there will be no <code>environment.rb.tmpl</code> anymore. You will find an <code>environment.rb</code> which you can leave untouched. Just fill in your settings from your old <code>environment.rb</code> in the new <code>site.yml</code>. If you have made any other customisations to <code>environment.rb</code> in the past, you can put them in your own configuration file (for example, in my-config.rb) in <code>config/initializers</code>. Please let us know it you think they should be in <code>site.yml.tmpl</code></p>
+<p>Also, there were some database changes made in Tracks 1.7, so you need to migrate to them.</p>
 <ol>
 	<li>Back up your existing database and installation of Tracks</li>
-	<li>Install Tracks 1.7RC2 in a new directory</li>
-	<li>Copy over the configuration from your previous Tracks installation. If using SQLite3, copy the old database into the new Tracks 1.7RC2 directory.</li>
+	<li>Install Tracks 1.7 in a new directory</li>
+	<li>Copy over the configuration from your previous Tracks installation. If using SQLite3, copy the old database into the new Tracks 1.7 directory.</li>
 	<li>Run <code>rake db:migrate RAILS_ENV=production</code> to update your old database to the new schema &#8212; you did back up your database didn&#8217;t you?</li>
 	<li>Run <code>script/server</code> inside your Tracks 1.7 directory to start up Tracks 1.7.</li>
 	<li>Once you are happy that everything is working well, delete your old Tracks directory.</li>
@@ -77,7 +80,7 @@
 <ol>
 	<li>Back up your existing database and installation of Tracks</li>
 	<li>Install Tracks 1.6 in a new directory</li>
-	<li>Copy over the configuration from your previous Tracks 1.043 installation. If using SQLite3, copy the old database into the new Tracks 1.7RC2 directory.</li>
+	<li>Copy over the configuration from your previous Tracks 1.043 installation. If using SQLite3, copy the old database into the new Tracks 1.7 directory.</li>
 	<li>Run <code>rake db:migrate RAILS_ENV=production</code> to update your old database to the new schema &#8212; you did back up your database didn&#8217;t you?<br />
 +# Run <code>script/server</code> inside your Tracks 1.7 directory to start up Tracks 1.7.</li>
 	<li>Once you are happy that everything is working well, delete your old Tracks directory.</li>
@@ -91,7 +94,7 @@
 <h4>Install the latest version of Tracks</h4>
 <p>There are two methods of downloading Tracks:</p>
 <ol>
-	<li>(Recommended for most people) Download the <a href="http://bsag.bingodisk.com/public/files/tracks_1.7rc.zip">zipped package</a>, and unzip in your preferred location (e.g. <code>~/Sites</code> for Mac OS X users).</li>
+	<li>(Recommended for most people) Download the <a href="http://bsag.bingodisk.com/public/files/tracks_1.7.zip">zipped package</a>, and unzip in your preferred location (e.g. <code>~/Sites</code> for Mac OS X users).</li>
 	<li>If you want to live on the edge, you can get the latest development version from GitHub using git (bear in mind that this may be less stable than the released versions):</li>
 </ol>
 <div class="UltraViolet"><pre class="blackboard"><span class="line-numbers">   1 </span> cd <span class="Keyword">~</span>/Sites
@@ -154,7 +157,7 @@
    </div>
    
    <div id="footer" class="column span-24 first last">
-     <p>Last updated on Thu 05 Feb 2009 at 20:56 &nbsp; :: &nbsp; Created with <a href="http://webby.rubyforge.org">Webby</a></p>
+     <p>Last updated on Thu 26 Feb 2009 at 21:06 &nbsp; :: &nbsp; Created with <a href="http://webby.rubyforge.org">Webby</a></p>
 
    </div>
 
