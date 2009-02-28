@@ -128,9 +128,10 @@ h4.  Easy installation options
 
 
 	<ol>
-	<li><strong>Ruby</strong>. Version 1.8.6 is recommended, but it is also possible to use 1.8.5, 1.8.4 and 1.8.2. Note that 1.8.3 is not compatible. If you are running Mac OS X Leopard, you already have Ruby 1.8.6 installed by default, so you have nothing to do here. You can get the source to compile yourself <a href="http://ftp.ruby-lang.org/pub/ruby/1.8/ruby-1.8.6.tar.gz">here</a> for all platforms, or Windows users can use an easy <a href="http://rubyforge.org/frs/?group_id=167">installer</a>. If you&#8217;re using a version of Mac OS X earlier than 10.5.0, it is recommended that you use the <a href="http://hivelogic.com/narrative/articles/ruby-rails-mongrel-mysql-osx">instructions here</a> to install all the Rails dependencies, though you can skip the step to install Rails if you like.</li>
-		<li><strong>RubyGems</strong>. The gems needed by Rails to interact with the database have to be compiled on the platform on which they will be run, so we cannot include them with the Tracks package, unlike some other gems. So you will need to <a href="http://rubyforge.org/frs/?group_id=126">download</a> and install RubyGems (run <code>ruby setup.rb</code> after extracting the package). Note that once again, Mac OS X Leopard users get an easy life, because RubyGems and the SQLite3 gem is already installed. Once installed you can use RubyGems to install the gems you need for your database. If you are using SQLite3, run <code>sudo gem install sqlite3-ruby</code>, then select the appropriate package for your platform (version 1.2.1 recommended). You can use MySQL without installing a gem, but installing the gem can speed things up a bit: <code>sudo install gem mysql</code>. If you&#8217;re using Leopard, there are a few work-arounds necessary, which are explained on <a href="http://trac.macosforge.org/projects/ruby/wiki/Troubleshooting#IcannotbuildrubymysqlonLeopardwithmysql.combinaries">Mac OS Forge</a>. The ruby-mysql bindings can sometimes be a bit troublesome to install, so to be honest, it&#8217;s probably not worth the bother unless you are trying to wring maximum speed out of your system. If you are using PostgreSQL, then you can install a postgres gem: <code>gem install postgres</code>.</li>
+	<li><strong>Ruby</strong>. Version 1.8.6 or 1.8.7 is recommended, but it is also possible to use 1.8.5, 1.8.4 and 1.8.2. Note that 1.8.3 is not compatible. If you are running Mac OS X Leopard, you already have Ruby 1.8.6 installed by default, so you have nothing to do here. You can get the source to compile yourself <a href="http://ftp.ruby-lang.org/pub/ruby/1.8/ruby-1.8.6.tar.gz">here</a> for all platforms, or Windows users can use an easy <a href="http://rubyforge.org/frs/?group_id=167">installer</a>. If you&#8217;re using a version of Mac OS X earlier than 10.5.0, it is recommended that you use the <a href="http://hivelogic.com/narrative/articles/ruby-rails-mongrel-mysql-osx">instructions here</a> to install all the Rails dependencies, though you can skip the step to install Rails if you like.</li>
+		<li><strong>RubyGems</strong>. The gems needed by Rails to interact with the database have to be compiled on the platform on which they will be run, so we cannot include them with the Tracks package, unlike some other gems. So you will need to <a href="http://rubyforge.org/frs/?group_id=126">download</a> and install RubyGems (run <code>ruby setup.rb</code> after extracting the package). Note that once again, Mac OS X Leopard users get an easy life, because RubyGems and the SQLite3 gem is already installed. Once installed you can use RubyGems to install the gems you need for your database. If you are using SQLite3, run <code>sudo gem install sqlite3-ruby</code>, then select the appropriate package for your platform (version 1.2.1 recommended). You can use MySQL without installing a gem, but installing the gem can speed things up a bit: <code>sudo gem install mysql</code>. If you&#8217;re using Leopard, there are a few work-arounds necessary, which are explained on <a href="http://trac.macosforge.org/projects/ruby/wiki/Troubleshooting#IcannotbuildrubymysqlonLeopardwithmysql.combinaries">Mac OS Forge</a>. The ruby-mysql bindings can sometimes be a bit troublesome to install, so to be honest, it&#8217;s probably not worth the bother unless you are trying to wring maximum speed out of your system. If you are using PostgreSQL, then you can install a postgres gem: <code>gem install postgres</code>.</li>
 		<li><strong>Database</strong>. The easiest option is to use SQLite3, as the database is included in the package. All you need then is the <code>sqlite3-ruby</code> gem, as described in step 2, and the SQLite3 libraries and binary (see <a href="http://sqlite.org/download.html">sqlite.org</a> for downloads and installation instructions). If you want to use MySQL, download and install a package for your platform from <a href="http://dev.mysql.com/downloads/mysql/5.0.html">MySQL.com</a>. The basic steps for Postgresql should be similar to those for MySQL, but they will not be discussed further here.</li>
+		<li><strong>Rake</strong> You will need rake to install and upgrade Tracks. If it is not installed on your system, use <code>sudo gem install rake</code> to install it.</li>
 	</ol>
 
 
@@ -179,8 +180,8 @@ h4.  Easy installation options
 
 
 <div class="UltraViolet"><pre class="blackboard"><span class="line-numbers">   1 </span> mysql -uroot -p
-<span class="line-numbers">   2 </span> mysql&gt; CREATE DATABASE tracks<span class="Constant">16</span>;
-<span class="line-numbers">   3 </span> mysql&gt; <span class="Keyword">GRANT</span> ALL PRIVILEGES <span class="Keyword">ON </span>tracks<span class="Constant">16</span>.* TO yourmysqluser@localhost \
+<span class="line-numbers">   2 </span> mysql&gt; CREATE DATABASE tracks;
+<span class="line-numbers">   3 </span> mysql&gt; <span class="Keyword">GRANT</span> ALL PRIVILEGES <span class="Keyword">ON </span>tracks.* TO yourmysqluser@localhost \
 <span class="line-numbers">   4 </span> IDENTIFIED BY <span class="String"><span class="String">'</span>password-goes-here'</span> WITH <span class="Keyword">GRANT</span> OPTION;
 </pre></div>
 
@@ -189,9 +190,9 @@ h4.  Easy installation options
 
 
 	<ol>
-	<li>If you downloaded Tracks 1.7 via GitHub, you need to duplicate the files <code>database.yml.tmpl</code> and <code>environment.rb.tmpl</code> and remove the <code>*.tmpl</code> extension from the duplicates. Similarly, duplicate <code>/log.tmpl</code> and remove the <code>*.tmpl</code> extension, then edit the files as described in steps 2 and 3.</li>
+	<li>If you downloaded Tracks 1.7 via GitHub, you need to duplicate the files <code>database.yml.tmpl</code> and <code>site.yml.tmpl</code> and remove the <code>*.tmpl</code> extension from the duplicates. Similarly, duplicate <code>/log.tmpl</code> and remove the <code>*.tmpl</code> extension, then edit the files as described in steps 2 and 3.</li>
 		<li>Open the file <code>/config/database.yml</code> and edit the <code>production:</code> section with the details of your database. If you are using MySQL the <code>adapter:</code> line should read <code>adapter: mysql</code>, <code>host: localhost</code> (in the majority of cases), and your username and password should match those you assigned when you created the database. If you are using SQLite3, you should have only two lines under the production section: <code>adapter: sqlite3</code> and <code>database: db/tracks-17-blank.db</code>. If you downloaded the zipped file, the database.yml file is already configured to use the provided SQLite3 file.</li>
-		<li>Open the file <code>/config/environment.rb</code>, and read through the settings to make sure that they suit your setup. In most cases, all you need to change is the <code>SALT = "change-me"</code> line (change the string &#8220;change-me&#8221; to some other string of your choice), and the time zone setting. For the time zone setting, most people will only want to change the config.time_zone option and leave the timezone to use in your database to :utc</li>
+		<li>Open the file <code>/config/site.yml</code>, and read through the settings to make sure that they suit your setup. In most cases, all you need to change is the <code>salt: "change-me"</code> line (change the string &#8220;change-me&#8221; to some other string of your choice), and the time zone setting. For the time zone setting you can use the command <code>rake time:zones:local</code> to see all available timezones on your machine</li>
 		<li>If you are using Windows, you may need to check the &#8216;shebang&#8217; lines (<code>#!/usr/bin/env ruby</code>) of the <code>/public/dispatch.*</code> files and all the files in the <code>/script</code> directory. They are set to <code>#!/usr/bin/env ruby</code> by default. This should work for all Unix based setups (Linux or Mac OS X), but Windows users will probably have to change it to something like <code>#c:/ruby/bin/ruby</code> to point to the Ruby binary on your system.</li>
 	</ol>
 
@@ -234,40 +235,38 @@ If all goes well, you should see some text informing you that the Mongrel server
   <h2> Upgrading Tracks</h2>
 
 
-	<h3> Upgrading from Tracks 1.6</h3>
+	<h3> Upgrading from Tracks 1.7RC2 to Tracks 1.7</h3>
 
 
-	<p>You will need to upgrade your <code>config/environment.rb</code> with the new content from <code>config/environment.rb.tmpl</code> included in 1.7, as the format of this file has changed a bit between 1.6 and 1.7. Also, there were some database changes in Tracks 1.7, so you need to migrate to them.</p>
+	<p>There were only a few fixes in the code, so you can consider unzipping the new release over your install of Tracks 1.7RC2. Do make a backup of your Tracks 1.7RC2 install and your database!</p>
+
+
+	<p>It is also possible to follow the instructions below and copy your existing Site.yml from your Tracks 1.7RC2 install.</p>
+
+
+	<h3> Upgrading from Tracks 1.5, 1.6 or from Tracks 1.7RC1 to Tracks 1.7</h3>
+
+
+	<p>In Tracks 1.7 (since RC2) the site specific configuration is moved from <code>environment.rb</code> into the new <code>site.yml</code>. This makes updating <code>environment.rb</code> much easier without you needing to set your site specific settings after each update.</p>
+
+
+	<p>After you install Tracks 1.7 there will be no <code>environment.rb.tmpl</code> anymore. You will find an <code>environment.rb</code> which you can leave untouched. Just fill in your settings from your old <code>environment.rb</code> in the new <code>site.yml</code>. If you have made any other customisations to <code>environment.rb</code> in the past, you can put them in your own configuration file (for example, in my-config.rb) in <code>config/initializers</code>. Please let us know it you think they should be in <code>site.yml.tmpl</code></p>
+
+
+	<p>Also, there were some database changes made in Tracks 1.7, so you need to migrate to them.</p>
 
 
 	<ol>
 	<li>Back up your existing database and installation of Tracks</li>
 		<li>Install Tracks 1.7 in a new directory</li>
-		<li>Copy over a few configuration files from your Tracks 1.6 directory. If using SQLite3, copy the old database into the new Tracks 1.7 directory.</li>
-		<li>Rebuild your environment.rb from the updated environment.rb.tmpl</li>
+		<li>Copy over the configuration from your previous Tracks installation. If using SQLite3, copy the old database into the new Tracks 1.7 directory.</li>
 		<li>Run <code>rake db:migrate RAILS_ENV=production</code> to update your old database to the new schema&#8212;you did back up your database didn&#8217;t you?</li>
 		<li>Run <code>script/server</code> inside your Tracks 1.7 directory to start up Tracks 1.7.</li>
 		<li>Once you are happy that everything is working well, delete your old Tracks directory.</li>
 	</ol>
 
 
-	<h3> Upgrading from Tracks 1.5</h3>
-
-
-	<p>There are no changes to the database between 1.5 and 1.6, but you will need to upgrade your <code>config/environment.rb</code> with the new content from <code>config/environment.rb.tmpl</code> included in 1.6, as the format of this file has changed a great deal between 1.5 and 1.6.</p>
-
-
-	<ol>
-	<li>Back up your existing database and installation of Tracks</li>
-		<li>Install Tracks 1.6 in a new directory</li>
-		<li>Copy over a few configuration files from your Tracks 1.043 directory. If using SQLite3, copy the old database into the new Tracks 1.6 directory</li>
-		<li>Rebuild your environment.rb from the updated environment.rb.tmpl</li>
-		<li>Run <code>script/server</code> inside your Tracks 1.6 directory to start up Tracks 1.6.</li>
-		<li>Once you are happy that everything is working well, delete your old Tracks directory.</li>
-	</ol>
-
-
-	<h3> Upgrading from Tracks 1.043</h3>
+	<h3> Upgrading from Tracks 1.043 to 1.7</h3>
 
 
 	<p>This should be a relatively straightforward, and involves the following main steps:</p>
@@ -276,9 +275,9 @@ If all goes well, you should see some text informing you that the Mongrel server
 	<ol>
 	<li>Back up your existing database and installation of Tracks</li>
 		<li>Install Tracks 1.6 in a new directory</li>
-		<li>Copy over a few configuration files from your Tracks 1.043 directory. If using SQLite3, copy the old database into the new Tracks 1.6 directory</li>
-		<li>Run <code>rake db:migrate RAILS_ENV=production</code> to update your old database to the new schema&#8212;you did back up your database didn&#8217;t you?</li>
-		<li>Run <code>script/server</code> inside your Tracks 1.6 directory to start up Tracks 1.6.</li>
+		<li>Copy over the configuration from your previous Tracks 1.043 installation. If using SQLite3, copy the old database into the new Tracks 1.7 directory.</li>
+		<li>Run <code>rake db:migrate RAILS_ENV=production</code> to update your old database to the new schema&#8212;you did back up your database didn&#8217;t you?
++# Run <code>script/server</code> inside your Tracks 1.7 directory to start up Tracks 1.7.</li>
 		<li>Once you are happy that everything is working well, delete your old Tracks directory.</li>
 	</ol>
 
@@ -306,7 +305,7 @@ Rename your old Tracks installation (e.g. to &#8216;tracks-old&#8217;) so that y
 
 
 	<ol>
-	<li>(Recommended for most people) Download the <a href="http://bsag.bingodisk.com/public/files/tracks_1.7rc.zip">zipped package</a>, and unzip in your preferred location (e.g. <code>~/Sites</code> for Mac OS X users).</li>
+	<li>(Recommended for most people) Download the <a href="http://bsag.bingodisk.com/public/files/tracks_1.7.zip">zipped package</a>, and unzip in your preferred location (e.g. <code>~/Sites</code> for Mac OS X users).</li>
 		<li>If you want to live on the edge, you can get the latest development version from GitHub using git (bear in mind that this may be less stable than the released versions):</li>
 	</ol>
 
@@ -318,15 +317,15 @@ Rename your old Tracks installation (e.g. to &#8216;tracks-old&#8217;) so that y
 </pre></div>
 
 
-	<h4> Copy over old configuration files</h4>
+	<h4> Copy over old configuration</h4>
 
 
-	<p>There are a few files you need to copy over from your old installation. If you copy them over rather than moving them, you can still run your old version of Tracks if anything goes awry with the installation process.</p>
+	<p>There are a few settings and configuration files you need to copy over from your old installation. If you copy them over rather than moving them, you can still run your old version of Tracks if anything goes awry with the installation process.</p>
 
 
 	<ol>
 	<li>Copy <code>/config/database.yml</code> from your old Tracks directory to the same location in the new one. Double check that the information there is still correct.</li>
-		<li>Duplicate <code>/config/environment.rb.tmpl</code> in the Tracks 1.7 directory, and rename the file to <code>environment.rb</code>. Open the file and alter the line <code>SALT = "change-me"</code> so that it matches what you had in this file in your old installation. You may also want to change the time zone setting as appropriate for your location. If you have made any other customisations to <code>environment.rb</code> in the past, copy those over, but the contents of the file have slightly changed since 1.5, so check it carefully.</li>
+		<li>Duplicate <code>/config/site.yml.tmpl</code> in the Tracks 1.7 directory, and rename the file to <code>site.yml</code>. Open the file and alter the line <code>salt: "change-me"</code> so that it matches what you had in the <code>environment.rb</code> file in your old installation. You may also want to change the time zone setting as appropriate for your location. If you have made any other customisations to <code>environment.rb</code> in the past, you can put them in your own configuration file (e.g. my-config.rb) in <code>config/initializers</code>. Please let us know it you think they should be in <code>site.yml.tmpl</code>.</li>
 		<li>Copy your <code>/log</code> directory over from your old installation to the root of the new one, or just rename <code>/log.tmpl</code> to <code>log</code> to start afresh.</li>
 		<li>If you are using SQLite3, copy your database from <code>/db</code> in your old Tracks directory to the same location in the new one.</li>
 		<li>If you are using Windows, you may need to check the &#8216;shebang&#8217; lines (<code>#!/usr/bin/env ruby</code>) [1] of the <code>/public/dispatch.*</code> files and all the files in the <code>/script</code> directory. They are set to <code>#!/usr/bin/env ruby</code> by default. Check the format of those lines in your old installation, and change the new ones as necessary.</li>
@@ -412,7 +411,7 @@ Rename your old Tracks installation (e.g. to &#8216;tracks-old&#8217;) so that y
    </div>
    
    <div id="footer" class="column span-24 first last">
-     <p>Last updated on Sat 17 Jan 2009 at 19:36 &nbsp; :: &nbsp; Created with <a href="http://webby.rubyforge.org">Webby</a></p>
+     <p>Last updated on Sat 28 Feb 2009 at 11:32 &nbsp; :: &nbsp; Created with <a href="http://webby.rubyforge.org">Webby</a></p>
 
    </div>
 
