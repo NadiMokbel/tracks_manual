@@ -1,21 +1,22 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<html xml:lang="en" lang="en-us" xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-  <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>Tracks Manual :: Home</title>
 <meta name="author" content="" />
 
 <!--- Blueprint CSS Framework -->
-<link href="http://www.getontracks.org/doc/css/blueprint/screen.css" rel="stylesheet" type="text/css" media="screen, projection" />
-<link href="http://www.getontracks.org/doc/css/blueprint/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="stylesheet" href="/css/blueprint/screen.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="/css/blueprint/print.css" type="text/css" media="print" />
 
 <!-- Ultraviolet syntax highlighting CSS -->
-<link href="http://www.getontracks.org/doc/css/blackboard.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="/css/blackboard.css" type="text/css" />
 
 <!-- Custom CSS for screen and PDF -->
-<link href="http://www.getontracks.org/doc/css/site.css" rel="stylesheet" type="text/css" media="screen, projection" />
-<link href="http://www.getontracks.org/doc/css/printed-pdf.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="stylesheet" href="/css/site.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="/css/printed-pdf.css" type="text/css" media="print" />
 
 <body>
 
@@ -38,37 +39,30 @@
    </div>
 
    <div class="column span-15 append-1 first">
-      <div class="box" id="toc">
-  <ul>
+      <div id="toc" class="box">
+<ul>
     <li><a href="http://www.getontracks.org/doc/chapter/1-introduction.html" class="current">Introduction</a></li>
 
       <li><a href="http://www.getontracks.org/doc/chapter/2-installation.html">Installation</a></li>
 
       <li><a href="http://www.getontracks.org/doc/chapter/3-upgrading.html">Upgrading</a></li>
 
-  </ul>
+</ul>
 </div>
-
-<h2> Introduction</h2>
-
-    <p>Tracks is a web application that is specifically designed to implement the Getting Things Done &trade; (GTD) methods. That doesn&#8217;t mean that you can&#8217;t use it for other kinds of todo tracking. Data is stored in a database (either MySQL, Postgresql or SQLite), and viewed in a web browser via a web server (Apache, Lighttpd or Mongrel among others). This makes it cross-platform as well as being accessible from anywhere that you have web access.</p>
-
-    <p>Using the GTD method as a model, there are three main components to Tracks: Next actions, Contexts and Projects.</p>
-
-    <ul>
-    <li><strong>Next Actions</strong>: These are the heart of GTD. They are the very next physical action that can be taken on something. It&#8217;s best to phrase these in an active way e.g. &#8220;Call Bob about the committee meeting&#8221; or &#8220;Search for a reputable garage&#8221;.</li>
-        <li><strong>Contexts</strong>: Contexts are very flexible, and can be places, states of mind or modes of working in which actions can be taken. Next actions can be assigned to and sorted by context so that you know when you are able to make progress with items. e.g. &#8220;Library&#8221;, &#8220;Shops&#8221; or &#8220;Tired&#8221;.</li>
-        <li><strong>Projects</strong>: any goal which requires more than one next action to take it to completion is a Project. In Tracks, you can view your next actions by Project.</li>
-    </ul>
-
-    <p>Tracks has been thoroughly beta tested by a large number of people, and should be fully stable for everyday use. However, once set up, Tracks will contain the majority of your plans for your work and personal life, so it&#8217;s only sensible to make sure that you have frequent, reliable backups of your data. Full changenotes on the release can be found in <code>doc/CHANGELOG</code>. Full API documentation can be found at <code>doc/app/index.html</code>, once you have run <code>rake appdoc</code>.</p>
-
-    <h3>About this manual</h3>
-
-    <p>The source for this manual is kept in a <a href="http://github.com/bsag/tracks_manual/tree">GitHub repository</a>, and this is pulled as a submodule into the doc/manual subdirectory of the main <a href="http://github.com/bsag/tracks/tree">Tracks repository</a>. The source is maintained using <a href="http://webby.rubyforge.org/">Webby</a> to create the HTML (deployed to the Tracks site), and <a href="http://www.princexml.com/">Prince XML</a> is used to convert the HTML to PDF.</p>
+<h2>Introduction</h2>
+<p>Tracks is a web application that is specifically designed to implement the Getting Things Done &trade; (GTD) methods. That doesn&#8217;t mean that you can&#8217;t use it for other kinds of todo tracking. Data is stored in a database (either MySQL, Postgresql or SQLite), and viewed in a web browser via a web server (Apache, Lighttpd or Mongrel among others). This makes it cross-platform as well as being accessible from anywhere that you have web access.</p>
+<p>Using the GTD method as a model, there are three main components to Tracks: Next actions, Contexts and Projects.</p>
+<ul>
+	<li><strong>Next Actions</strong>: These are the heart of GTD. They are the very next physical action that can be taken on something. It&#8217;s best to phrase these in an active way e.g. &#8220;Call Bob about the committee meeting&#8221; or &#8220;Search for a reputable garage&#8221;.</li>
+	<li><strong>Contexts</strong>: Contexts are very flexible, and can be places, states of mind or modes of working in which actions can be taken. Next actions can be assigned to and sorted by context so that you know when you are able to make progress with items. e.g. &#8220;Library&#8221;, &#8220;Shops&#8221; or &#8220;Tired&#8221;.</li>
+	<li><strong>Projects</strong>: any goal which requires more than one next action to take it to completion is a Project. In Tracks, you can view your next actions by Project.</li>
+</ul>
+<p>Tracks has been thoroughly beta tested by a large number of people, and should be fully stable for everyday use. However, once set up, Tracks will contain the majority of your plans for your work and personal life, so it&#8217;s only sensible to make sure that you have frequent, reliable backups of your data. Full changenotes on the release can be found in <code>doc/CHANGELOG</code>. Full API documentation can be found at <code>doc/app/index.html</code>, once you have run <code>rake appdoc</code>.</p>
+<h3>About this manual</h3>
+<p>The source for this manual is kept in a <a href="http://github.com/bsag/tracks_manual/tree">GitHub repository</a>, and this is pulled as a submodule into the doc/manual subdirectory of the main <a href="http://github.com/bsag/tracks/tree">Tracks repository</a>. The source is maintained using <a href="http://webby.rubyforge.org/">Webby</a> to create the HTML (deployed to the Tracks site), and <a href="http://www.princexml.com/">Prince XML</a> is used to convert the HTML to PDF.</p>
    </div>
 
-   <div class="column span-8 last" id="sidebar">
+   <div id="sidebar" class="column span-8 last">
         <h4>Other resources</h4>
 
    <div class="box">
@@ -85,11 +79,11 @@
 
    </div>
    
-   <div class="column span-24 first last" id="footer">
-     <p>Last updated on Sat 28 Feb 2009 at 11:32 &nbsp; :: &nbsp; Created with <a href="http://webby.rubyforge.org">Webby</a></p>
+   <div id="footer" class="column span-24 first last">
+     <p>Last updated on Mon 19 Jan 2009 at 21:08 &nbsp; :: &nbsp; Created with <a href="http://webby.rubyforge.org">Webby</a></p>
 
    </div>
 
 </div>
 </body>
-</head></html>
+</html>
