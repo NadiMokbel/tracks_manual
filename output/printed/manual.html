@@ -259,7 +259,7 @@ If all goes well, you should see some text informing you that the Mongrel server
 	<ol>
 	<li>Back up your existing database and installation of Tracks</li>
 		<li>Install Tracks 1.7 in a new directory</li>
-		<li>Copy over the configuration from your previous Tracks installation. If using SQLite3, copy the old database into the new Tracks 1.7 directory.</li>
+		<li>Copy over the configuration from your previous Tracks installation (except for environment.rb, see above). If using SQLite3, copy the old database into the new Tracks 1.7 directory.</li>
 		<li>Run <code>rake db:migrate RAILS_ENV=production</code> to update your old database to the new schema&#8212;you did back up your database didn&#8217;t you?</li>
 		<li>Run <code>script/server</code> inside your Tracks 1.7 directory to start up Tracks 1.7.</li>
 		<li>Once you are happy that everything is working well, delete your old Tracks directory.</li>
